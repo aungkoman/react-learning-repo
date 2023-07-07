@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# Chat with React
+
+React သုံးပြီး Chat Room UI တစ်ခု ဖန်တီးမယ်။
+
+ပါမယ့် Component တွေက
+
+- conversation list
+- coversation detail
+- user detail
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
