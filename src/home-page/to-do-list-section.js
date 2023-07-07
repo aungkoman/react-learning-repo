@@ -4,6 +4,5 @@ function ToDoListSection() {
             <span>Hello World</span>
         </div>
     );
-  }
-  
-  export default ToDoListSection;
+}
+export default ToDoListSection;

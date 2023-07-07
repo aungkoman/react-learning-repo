@@ -20,6 +20,17 @@
   pointer-events: none;
 }
 
+
+.conversation-headline{
+  padding: 24px;
+  margin: 24px;
+  background-color: teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: white;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 1s linear;
