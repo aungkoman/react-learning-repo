@@ -15,6 +15,7 @@ const LoginPage = () => {
     // State Managers
     const login = (event) => {
         event. preventDefault();
+
         let body  = {
             email : email,
             password : password
@@ -27,6 +28,13 @@ const LoginPage = () => {
             // navigate('/home');
             // history.push('/home')
             // how to set user info to state management
+            let response_data = response.data;
+            if(response_data.status == true){
+                let user = response_data.data;
+                console.log("user is ");
+                console.log(user);
+                navigate('/shops');
+            }
         })
         .catch((err) => {
             console.log("login->err");
