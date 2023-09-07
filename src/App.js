@@ -13,6 +13,7 @@ import NoPage from "./pages/no_page";
 import LoginPage from "./pages/auth/login_page";
 import RegisterPage from "./pages/auth/register_page";
 import ShopsPage from "./pages/shops/shops_page";
+import ShopPage from "./pages/shops/shop_page";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/shops" element={<ShopsPage />} />
+          <Route path="/shops/:url" element={<ShopPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
