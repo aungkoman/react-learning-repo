@@ -7,6 +7,8 @@ const HomePage = () => {
     const [taskList, setTaskList] = useState([]);
 
     // for initial call
+    // BUG: အခုထိတော့ (၂) ကော ခေါ်နေတုန်း။
+    
     useEffect(() => {
         console.log("home_page->useEffect");
         axios.get(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData`)
