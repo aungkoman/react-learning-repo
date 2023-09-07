@@ -19,10 +19,16 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="blogs" element={<ProfilePage />} />
           <Route path="*" element={<NoPage />} />
+          <Route path="/home" element={<HomePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
   );
+}
+
+export default App;
+
+
   /*
   return (
     <>
@@ -34,6 +40,4 @@ function App() {
     </>
   );
   */
-}
 
-export default App;
