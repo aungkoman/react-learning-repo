@@ -1,5 +1,27 @@
 # Chat with React
 
+
+## SAMPLE CRUD using Fetch / Axios and Express Backend
+
+- [ ] Basic Auth Workflow 
+- [ ] Task Management
+
+### Numbers of Screen
+
+- [ ] Login
+- [ ] Register
+- [ ] Profile 
+- [ ] Profile Edit
+- [ ] Task List
+- [ ] New Task Form
+- [ ] Edit Task Form
+
+ဒါဆို ရပြီ။
+
+Routing 
+
+
+
 React သုံးပြီး Chat Room UI တစ်ခု ဖန်တီးမယ်။
 
 ပါမယ့် Component တွေက
