@@ -14,6 +14,12 @@ const Layout = () => {
           <li>
             <Link to="/contact">404</Link>
           </li>
+          <li>
+            <Link to="/login">Login Page</Link>
+          </li>
+          <li>
+            <Link to="/register">Register Page</Link>
+          </li>
         </ul>
       </nav>
       <Outlet />

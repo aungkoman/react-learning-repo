@@ -8,7 +8,7 @@ const HomePage = () => {
 
     // for initial call
     // BUG: အခုထိတော့ (၂) ကော ခေါ်နေတုန်း။
-    
+
     useEffect(() => {
         console.log("home_page->useEffect");
         axios.get(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData`)
@@ -22,9 +22,9 @@ const HomePage = () => {
     return <>
         <h1>HomePage</h1>
         <ul>
-        {taskList.map((data) => {
+        {taskList.map((data, index) => {
             return (
-                <li id='{data.id}'>{data.name}</li>
+                <li key={data.id}>{data.id}</li>
             )
         })}
         </ul>

@@ -23,6 +23,15 @@ Routing
 https://github.com/nishant-666/React-CRUD-Operation-V2/blob/master/src/components/read.js ဒီမှာ နမူနာယူ။ State Management ကို Local Storage သုံးတာမျိုး။
 
 
+State Management တစ်ခု သုံးမှ အဆင်ပြေမယ်ဆို သုံးမယ်။
+အခုက ဘာတစ်ခုမှ မသုံးသေးပဲနဲ့ကို Rerender တွေ ချနေတာ။
+
+Route ကြောင့်မို့လား?
+
+
+
+-----------------
+
 React သုံးပြီး Chat Room UI တစ်ခု ဖန်တီးမယ်။
 
 ပါမယ့် Component တွေက

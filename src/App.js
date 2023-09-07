@@ -10,6 +10,8 @@ import Layout from "./pages/layout";
 import HomePage from "./pages/home_page";
 import ProfilePage from "./pages/profile_page";
 import NoPage from "./pages/no_page";
+import LoginPage from "./pages/auth/login_page";
+import RegisterPage from "./pages/auth/register_page";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="blogs" element={<ProfilePage />} />
           <Route path="*" element={<NoPage />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
