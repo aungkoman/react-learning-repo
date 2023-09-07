@@ -32,6 +32,19 @@ development stage မှာပေါ့။
 
 https://stackoverflow.com/questions/61254372/my-react-component-is-rendering-twice-because-of-strict-mode/61897567#61897567
 
+
+အခု ခေါ်ရမယ့် API Call က
+
+- [ ] Login
+- [ ] Register
+- [ ] Update Profile
+- [ ] Delete Account
+- [ ] Shop -> CRUD
+- [ ] Category -> CRUD 
+- [ ] Menu -> CRUD
+- [ ] Item -> CRUD
+
+
 -----------------
 
 React သုံးပြီး Chat Room UI တစ်ခု ဖန်တီးမယ်။
