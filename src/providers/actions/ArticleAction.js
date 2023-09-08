@@ -2,6 +2,6 @@ export const addAll = articles => ({
     type: 'ADD',
     articles: articles
 });
-export const clear = () =>({
+export const clearAll = () =>({
     type: 'CLEAR'
 });

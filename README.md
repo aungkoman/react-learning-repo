@@ -29,6 +29,11 @@ Functional က ပေးတဲ့ map , reduce , filter စတာတွေနဲ
 
 
 
+ဘယ် Reducer ကို သုံးမယ်။
+ဘယ် Action ကို သုံးမယ် စတာတွေကို View Component တွေက ရှင်းရှင်းလင်းလင်း ကြေညာပြီး သုံးကြတယ်။
+
+
+
 ## SAMPLE CRUD using Fetch / Axios and Express Backend
 
 - [ ] Basic Auth Workflow 

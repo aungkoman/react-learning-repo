@@ -14,6 +14,7 @@ import LoginPage from "./pages/auth/login_page";
 import RegisterPage from "./pages/auth/register_page";
 import ShopsPage from "./pages/shops/shops_page";
 import ShopPage from "./pages/shops/shop_page";
+import ArticleListPage from "./pages/articles/article_list_page";
 
 
 import { createStore } from 'redux';
@@ -37,6 +38,7 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/shops" element={<ShopsPage />} />
             <Route path="/shops/:url" element={<ShopPage />} />
+            <Route path="/articles" element={<ArticleListPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
