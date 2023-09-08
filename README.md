@@ -1,6 +1,17 @@
 # Chat with React
 
 
+## 2023-09-08 State Management in React using Redux
+
+- User ကို အရင် Manage လုပ်မယ်။ Array နဲ့ လုပ်ရမှာလား?
+
+redux အရင် install လုပ်မယ်။
+
+```bash
+npm install redux
+```
+
+
 ## SAMPLE CRUD using Fetch / Axios and Express Backend
 
 - [ ] Basic Auth Workflow 
