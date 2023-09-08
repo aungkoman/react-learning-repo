@@ -42,4 +42,23 @@ let data = [
   // Delete
   data = del(data, 1);
   console.log('After Delete:', data);
+
+  /* */
+  let oldObj = {
+    key1 : "value1",
+    key2 : "value2",
+  }
+
+  let updateObj = {
+    key2 : "value two",
+    key3 : "value 3"
+  }
+
+  let updatedObj  = {...oldObj, ...updateObj};
+
+  console.log(oldObj);
+  console.log(updateObj);
+  console.log(updatedObj);
+
+  /* obj မှာ Key နှစ်ခု specify လုပ်လိုက်ရင် နောက် key ကို အတည်ယူမယ် */
   
