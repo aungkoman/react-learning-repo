@@ -15,22 +15,32 @@ import RegisterPage from "./pages/auth/register_page";
 import ShopsPage from "./pages/shops/shops_page";
 import ShopPage from "./pages/shops/shop_page";
 
+
+import { createStore } from 'redux';
+import { useReducer } from 'react';
+import { Provider, connect } from 'react-redux';
+
+
+var store = createStore(useReducer);
+
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="blogs" element={<ProfilePage />} />
-          <Route path="*" element={<NoPage />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/shops" element={<ShopsPage />} />
-          <Route path="/shops/:url" element={<ShopPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="*" element={<NoPage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/shops" element={<ShopsPage />} />
+            <Route path="/shops/:url" element={<ShopPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
