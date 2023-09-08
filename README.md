@@ -35,7 +35,7 @@ https://stackoverflow.com/questions/61254372/my-react-component-is-rendering-twi
 
 အခု ခေါ်ရမယ့် API Call က
 
-- [ ] Login
+- [x] Login
 - [ ] Register
 - [ ] Update Profile
 - [ ] Delete Account
@@ -44,6 +44,8 @@ https://stackoverflow.com/questions/61254372/my-react-component-is-rendering-twi
 - [ ] Menu -> CRUD
 - [ ] Item -> CRUD
 
+State Management အရင်လိုမယ်။
+လောလောဆယ် User Info ကို Screen တစ်ခုနဲ့တစ်ခု မျှသုံးဖို့ အဆင်မပြေဘူးဖြစ်နေပြီ။
 
 -----------------
 
