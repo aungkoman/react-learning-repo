@@ -11,6 +11,20 @@ redux အရင် install လုပ်မယ်။
 npm install redux
 ```
 
+ပိုပြီး ရှင်းရှင်းလင်းလင်း နားလည်အောင်လို့ Reducer နောက်တစ်ခု ထည့်မယ်။
+
+Article တွေ အတွက်။
+
+Reducer တစ်ခုရေး
+Central Reducer မှာ သွားကြေညာထား။
+Action တွေ ရေး
+
+
+ပြမယ့်နေရာမှာ connect လုပ်
+- reducer က state ကို ပြ။
+
+
+
 
 ## SAMPLE CRUD using Fetch / Axios and Express Backend
 
