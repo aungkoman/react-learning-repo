@@ -41,6 +41,8 @@ const ProfilePage = ({user, logout}) => {
       <h1>ProfilePage</h1>
       <h2>Name</h2>
       <span>{ user.name }</span>
+
+      <button onClick={()=>{ console.log("Logout Clicked"); logout(user.id) }}>Logout</button>
     </>;
   };
   

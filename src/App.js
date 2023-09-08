@@ -17,11 +17,11 @@ import ShopPage from "./pages/shops/shop_page";
 
 
 import { createStore } from 'redux';
-import { useReducer } from 'react';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
+import reducers from './providers/reducers';
 
 
-var store = createStore(useReducer);
+var store = createStore(reducers);
 
 function App() {
   return (
