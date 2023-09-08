@@ -40,7 +40,9 @@ const ProfilePage = ({user, logout}) => {
     return <>
       <h1>ProfilePage</h1>
       <h2>Name</h2>
-      <span>{ user.name }</span>
+      <p>Name : { user.name }</p>
+      <p>Email : { user.email }</p>
+      <p>Role Name : { user.role != null ? user.role.name : "role" }</p>
 
       <button onClick={()=>{ console.log("Logout Clicked"); logout(user.id) }}>Logout</button>
     </>;

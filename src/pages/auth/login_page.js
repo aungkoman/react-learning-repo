@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import {login} from "../../providers/actions/UserAction";
 
+import { connect } from 'react-redux';
 
-const LoginPage = () => {
+const LoginPage = ({dispatch}) => {
     // State
     // let history = useHistory();
     const [email, setEmail] = useState('');
@@ -13,7 +15,7 @@ const LoginPage = () => {
     const navigate = useNavigate();
 
     // State Managers
-    const login = (event) => {
+    const loginSubmit = (event) => {
         event. preventDefault();
 
         let body  = {
@@ -33,7 +35,17 @@ const LoginPage = () => {
                 let user = response_data.data;
                 console.log("user is ");
                 console.log(user);
-                navigate('/shops');
+                // ဒီမှာ Login User Action ကို Dispatch လုပ်လို့ရမယ်။ 
+                // အခုတော့ Business Logic ကို UI ကလုပ်နေတယ်။
+                // နောက်တော့ Action မှာပဲ​လုပ်ပြီး Reducer မှာ Local State Management လုပ်ရမလား?
+                // နမူနာ တစ်ချက် ကြည့်ကြည့်မယ်။
+                // အခုပုံစံအတိုင်းဆိုရင် Reducer မှာ လုပ်ရင်လည်း Side Effect တွေ ရှိလာဉီးမယ်။
+                // Action မှာရော လုပ်လို့ရနိုင်လား တစ်ချက် ကြည့်။
+
+                // တော်သေးပြီ၊​ View မှာပဲ API ခေါ်ပါတော့မယ်။
+
+                dispatch(login(user));
+                navigate('/profile');
             }
         })
         .catch((err) => {
@@ -49,9 +61,10 @@ const LoginPage = () => {
         <form>
             <input type="email" placeholder="enter email" onChange={(e) => setEmail(e.target.value)} required />
             <input type="password" placeholder="enter password" onChange={(e) => setPassword(e.target.value)}  required />
-            <input type="submit" onClick={login} value="Login" />
+            <input type="submit" onClick={loginSubmit} value="Login" />
         </form>
     </>
   };
   
-export default LoginPage;
+// export default LoginPage;
+export default connect()(LoginPage);
