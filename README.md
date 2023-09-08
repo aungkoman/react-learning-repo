@@ -24,6 +24,9 @@ Action တွေ ရေး
 - reducer က state ကို ပြ။
 
 
+### Array တစ်ခုကို CRUD လုပ်နိုင်ဖို့
+Functional က ပေးတဲ့ map , reduce , filter စတာတွေနဲ့ Array တစ်ခုကို CRUD လုပ်ဖို့လိုမယ်။
+
 
 
 ## SAMPLE CRUD using Fetch / Axios and Express Backend
