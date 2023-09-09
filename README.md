@@ -1,6 +1,23 @@
 # Chat with React
 
 
+
+## 2023-09-09 User Management Module တစ််ခုလုံး လုပ်မယ်။
+
+- [x] Login ပြီးသွားပြီ။
+- [ ] Register လုပ်မယ်။
+- [ ] Update လုပ်မယ်။
+- [ ] ပုံတွေဘာတွေ တင်မယ်။
+
+ဒါဆို Local မှာ API လည်း တစ်ခါတည်းပြင်ပြီးသား ဖြစ်သွားမယ်။
+
+
+Register လုပ်ဖို့ ဆိုရင် ဘာလိုမလဲ?
+
+Reducer ဘက်ကမှာ က Register ဆိုပြီး Function တစ်ခု တိုးထားမယ်။
+သူက user ကို လက်ခံပြီး user state ကိုပြင်ရင် ရပြီ။
+
+
 ## 2023-09-08 State Management in React using Redux
 
 - User ကို အရင် Manage လုပ်မယ်။ Array နဲ့ လုပ်ရမှာလား?

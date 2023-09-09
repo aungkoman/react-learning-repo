@@ -64,7 +64,7 @@ const LoginPage = ({dispatch}) => {
             <input type="submit" onClick={loginSubmit} value="Login" />
         </form>
     </>
-  };
+};
   
 // export default LoginPage;
 export default connect()(LoginPage);
