@@ -6,6 +6,7 @@ import {clearAll, addAll} from "../../providers/actions/ArticleAction";
 
 const mapStateToProps = state => {
     return ({
+        user: state.user,
         articles: state.articles
     })
 }
@@ -17,12 +18,23 @@ const mapDispatchToProps = dispatch => {
 }
 
 /* list of data */
-const ArticleListPage = ({articles, clearAll, addAll}) => {
+const ArticleListPage = ({articles,user, clearAll, addAll}) => {
     /* Component တိုင်းမှာ State နဲ့ UI နှစ်ပိုင်းပါမယ်။ */
     
     useEffect(() => {
         console.log("home_page->useEffect");
-        axios.get("https://pandora.mmsoftware100.com/api/v1/articles")
+
+        const token = "this is token"; //user.access_token;
+
+        const config = {
+            headers: { Authorization: `Bearer ${token}` }
+        };
+        
+        const bodyParameters = {
+           key: "value"
+        };
+
+        axios.get("https://pandora.mmsoftware100.com/api/v1/articles", bodyParameters, config)
             .then((response) => {
                 console.log("article_list_page->useEffect response");
                 console.log(response.data);
