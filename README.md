@@ -17,6 +17,13 @@ Register လုပ်ဖို့ ဆိုရင် ဘာလိုမလဲ?
 Reducer ဘက်ကမှာ က Register ဆိုပြီး Function တစ်ခု တိုးထားမယ်။
 သူက user ကို လက်ခံပြီး user state ကိုပြင်ရင် ရပြီ။
 
+UI Component မှာ ဘာလိုမလဲ​ကြည့်မယ်။
+ဖောင်လိုမယ်။
+Form Submit Handler လိုမယ်။
+နောက် dispatch လုပ်မယ့် action တစ်ခုပါမယ်။
+Redirect လုပ်ဖို့အတွက် Route လိုမယ်။
+
+
 
 ## 2023-09-08 State Management in React using Redux
 

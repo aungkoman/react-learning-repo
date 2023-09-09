@@ -42,6 +42,9 @@ const ProfilePage = ({user, logout}) => {
       <h2>Name</h2>
       <p>Name : { user.name }</p>
       <p>Email : { user.email }</p>
+      <p>Created At : { user.created_at }</p>
+      <p>Update At : { user.updated_at }</p>
+      <p>Access Token : { user.access_token }</p>
       <p>Role Name : { user.role != null ? user.role.name : "role" }</p>
 
       <button onClick={()=>{ console.log("Logout Clicked"); logout(user.id) }}>Logout</button>
