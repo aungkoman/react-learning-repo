@@ -17,9 +17,9 @@ import ShopPage from "./pages/shops/shop_page";
 import ArticleListPage from "./pages/articles/article_list_page";
 
 
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './providers/reducers';
+import { createStore } from 'redux';
 
 
 var store = createStore(reducers);
