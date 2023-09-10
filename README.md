@@ -25,6 +25,12 @@ Redirect လုပ်ဖို့အတွက် Route လိုမယ်။
 
 
 
+### Article Module ဆက်သွားမယ်။
+
+New Feed စလုပ်မယ်။
+
+
+
 ## 2023-09-08 State Management in React using Redux
 
 - User ကို အရင် Manage လုပ်မယ်။ Array နဲ့ လုပ်ရမှာလား?
