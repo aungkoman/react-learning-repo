@@ -22,7 +22,7 @@ const LoginPage = ({dispatch}) => {
             email : email,
             password : password
         };
-        axios.post(`http://localhost/qrmenu/public/api/v1/login`, body )
+        axios.post(`http://localhost/pandora/public/api/v1/login`, body )
         .then((response) => {
             console.log("login->response");
             console.log(response);

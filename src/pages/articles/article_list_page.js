@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import { connect } from 'react-redux';
 import {clearAll, addAll} from "../../providers/actions/ArticleAction";
+import ArticleCard from '../../components/article_card';
 
 const mapStateToProps = state => {
     return ({
@@ -12,7 +13,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        clearAll: item => dispatch(clearAll()),
+        clearAll: () => dispatch(clearAll()),
         addAll: articles => dispatch(addAll(articles)),
     }
 }
@@ -48,8 +49,10 @@ const ArticleListPage = ({articles,user, clearAll, addAll}) => {
         <h1>Article List Page</h1>
         <ul>
         {articles.map((article, index) => {
+            // article card ဆိုပြီး component တစ်ခု ရှိသင့်တယ်။
             return (
-                <li key={article.id}>{article.title}</li>
+                ArticleCard({article})
+                // <li key={article.id}>{article.title}</li>
             )
         })}
         </ul>

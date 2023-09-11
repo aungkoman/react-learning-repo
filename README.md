@@ -1,11 +1,13 @@
 # Chat with React
 
+## 2023-09-11 Article Management
+
 
 
 ## 2023-09-09 User Management Module တစ််ခုလုံး လုပ်မယ်။
 
 - [x] Login ပြီးသွားပြီ။
-- [ ] Register လုပ်မယ်။
+- [x] Register လုပ်မယ်။
 - [ ] Update လုပ်မယ်။
 - [ ] ပုံတွေဘာတွေ တင်မယ်။
 
