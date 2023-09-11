@@ -2,6 +2,9 @@
 
 ## 2023-09-11 Article Management
 
+ပြဿနာက Request Header မှာ Bearer Token ထည့်မရတာပဲ။
+ရပြီ။
+Action နဲ့ Reducer ကိုလည်း ပြန်ပြင်လိုက်ရတယ်။​ ရေးထားတာ မှားနေလို့။
 
 
 ## 2023-09-09 User Management Module တစ််ခုလုံး လုပ်မယ်။

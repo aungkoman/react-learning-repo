@@ -25,18 +25,33 @@ const ArticleListPage = ({articles,user, clearAll, addAll}) => {
     useEffect(() => {
         console.log("home_page->useEffect");
 
-        const token = "this is token"; //user.access_token;
+        const token =  user.access_token;
+        console.log("token is ", token);
 
         const config = {
             headers: { Authorization: `Bearer ${token}` }
         };
+
+        console.log(config);
+
         
         const bodyParameters = {
            key: "value"
         };
 
-        axios.get("https://pandora.mmsoftware100.com/api/v1/articles", bodyParameters, config)
-            .then((response) => {
+        const axiosInstance = axios.create({
+            baseURL: "http://localhost/pandora/public/api/v1",
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Content-Type': 'application/json', // You can set other headers as needed
+            },
+          });
+
+
+          // axios.get("http://localhost/pandora/public/api/v1/articles", config)
+          // axios.get("http://localhost/pandora/public/api/v1/articles", config)
+          axiosInstance.get('/articles')
+          .then((response) => {
                 console.log("article_list_page->useEffect response");
                 console.log(response.data);
                 // need to dispatch as action
@@ -47,6 +62,7 @@ const ArticleListPage = ({articles,user, clearAll, addAll}) => {
     
     return <>
         <h1>Article List Page</h1>
+        <p>{user.access_token}</p>
         <ul>
         {articles.map((article, index) => {
             // article card ဆိုပြီး component တစ်ခု ရှိသင့်တယ်။
