@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => {
     return {
         clearAll: () => dispatch(clearAll()),
         addAll: articles => dispatch(addAll(articles)),
-        submitUpVote: (article_id, user) => dispatch(submitUpVote(article_id, user)),
+        submitUpVote: (article_id, user) => dispatch(submitUpVote(article_id, user))
     }
 }
 
@@ -56,12 +56,17 @@ const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote}) => {
                 console.log("article_list_page->useEffect response");
                 console.log(response.data);
                 // need to dispatch as action
-                // dispatch(addAll(response.data.data));
+                //dispatch(addAll(response.data.data));
+                // အခုထိ အဆင်ပြေတယ်။
+                // upVote ထည့်တဲ့အချိန် မအိုကေတာ။
                 addAll(response.data.data)
             })
     }, []);
 
     const upVote = article_id => {
+        console.log("ArticleListPage->upVote ${article_id}");
+        console.log(article_id);
+        console.log(user);
         submitUpVote(article_id, user);
     }
     

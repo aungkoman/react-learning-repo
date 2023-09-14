@@ -10,6 +10,24 @@ Feature တစ်ခု ထည့်မယ်ဆို ဘယ်က စလုပ
 - [ ] Routing မှာ သက်ဆိုင်ရာ Page တွေ ကြေညာမယ် ချိတ်မယ်။
 
 
+### ပြဿနာ
+
+react-dom.development.js:86 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+    at ArticleListPage (http://localhost:3000/static/js/bundle.js:763:5)
+    at ConnectFunction (http://localhost:3000/static/js/bundle.js:39872:103)
+    at RenderedRoute (http://localhost:3000/static/js/bundle.js:43735:5)
+    at Outlet (http://localhost:3000/static/js/bundle.js:44284:26)
+    at Layout
+    at RenderedRoute (http://localhost:3000/static/js/bundle.js:43735:5)
+    at Routes (http://localhost:3000/static/js/bundle.js:44367:5)
+    at Router (http://localhost:3000/static/js/bundle.js:44305:15)
+    at BrowserRouter (http://localhost:3000/static/js/bundle.js:42406:5)
+    at Provider (http://localhost:3000/static/js/bundle.js:39598:5)
+    at App
+
+ဘယ်ဟာက unlimited 
+
+
 ## 2023-09-11 Article Management
 
 ပြဿနာက Request Header မှာ Bearer Token ထည့်မရတာပဲ။
