@@ -11,6 +11,16 @@ export const submitUpVote = (article_id, user) =>({
     article_id: article_id,
     user: user
 });
+export const submitDownVote = (article_id, user) =>({
+    type: 'DOWN_VOTE',
+    article_id: article_id,
+    user: user
+});
+export const submitUnVote = (article_id, user) =>({
+    type: 'UN_VOTE',
+    article_id: article_id,
+    user: user
+});
 export const clearAll = () =>({
     type: 'CLEAR'
 });
