@@ -5,6 +5,8 @@ const articleReducer = (state = [], action) => {
             return [...action.articles];
         case 'CLEAR':
             return [];
+        case 'ADD_NEW':
+            return [action.new_article, ...state];
         default : return state;
     }
 }
