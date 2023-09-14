@@ -1,5 +1,15 @@
 # Chat with React
 
+## 2023-10-14 Up Vote, Down Vote နဲ့ Comment ထည့်မယ်။
+
+Feature တစ်ခု ထည့်မယ်ဆို ဘယ်က စလုပ်ရမလဲ?
+
+- [ ] Reducer စရေးရမယ်။
+- [ ] Action ရေးမယ်။
+- [ ] Page / Component ရေးမယ်။
+- [ ] Routing မှာ သက်ဆိုင်ရာ Page တွေ ကြေညာမယ် ချိတ်မယ်။
+
+
 ## 2023-09-11 Article Management
 
 ပြဿနာက Request Header မှာ Bearer Token ထည့်မရတာပဲ။
