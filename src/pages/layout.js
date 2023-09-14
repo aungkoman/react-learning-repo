@@ -29,6 +29,9 @@ const Layout = () => {
           <li>
             <Link to="/articles">Article List Page</Link>
           </li>
+          <li>
+            <Link to="/new-article">New Article Page</Link>
+          </li>
         </ul>
       </nav>
       <Outlet />

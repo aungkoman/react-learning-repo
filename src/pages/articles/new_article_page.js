@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import {login} from "../../providers/actions/UserAction";
 
 import { connect } from 'react-redux';
+import {addNewArticle} from "../../providers/actions/ArticleAction";
 
 
 /* ဒီမှာ ဘာတွေ လိုမလဲ? */
@@ -20,6 +20,20 @@ import { connect } from 'react-redux';
     @required action
     - addNewArticle
 */
+
+
+const mapStateToProps = state => {
+    return ({
+        // ဒီ​ component က လိုနေတဲ့ user ဆိုတဲ့ state က Combined Reducer မှာ user လို့ ကြေညာထားတဲ့ Reducer မှာ သိမ်းထားတဲ့ State ကိုပြောတာ။
+        user: state.user
+    })
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        addNewArticle: (new_article) => dispatch(addNewArticle(new_article)),
+    }
+}
+
 const NewArticlePage = ({user, addNewArticle}) => {
     // State
     const [title, setTitle] = useState('');
@@ -58,14 +72,14 @@ const NewArticlePage = ({user, addNewArticle}) => {
             // history.push('/home')
             // how to set user info to state management
             let response_data = response.data;
-            if(response_data.status == true){
+            if(response_data.status === true){
                 let new_article = response_data.data;
                 console.log("new_article is ");
                 console.log(new_article);
                 // new article တစ်ခု article list မှာ ထည့်။
                 // ဆိုတော့ dispatch လုပ်ပေ့ါ။
                 // မဟုတ်လည်း Action Function တစ်ခု ခေါ်လည်း ရတယ်။
-                addNewArticle(user);
+                addNewArticle(new_article);
                 // go to article list
                 navigate('/articles');
             }
@@ -81,7 +95,8 @@ const NewArticlePage = ({user, addNewArticle}) => {
     return <>
         <h2>Create New Article Page</h2>
         <form>
-            <input type="text" placeholder="enter email" onChange={(e) => setEmail(e.target.value)} required />
+            <input type="text" placeholder="enter title" onChange={(e) => setTitle(e.target.value)} required />
+            <input type="text" placeholder="enter content" onChange={(e) => setContent(e.target.value)} required />
             {/* text area */}
             <input type="submit" onClick={submitArticle} value="Submit" />
         </form>
@@ -89,4 +104,5 @@ const NewArticlePage = ({user, addNewArticle}) => {
 };
   
 // export default LoginPage;
-export default connect()(NewArticlePage);
+// export default connect()(NewArticlePage);
+export default connect(mapStateToProps,mapDispatchToProps)(NewArticlePage);
