@@ -33,6 +33,13 @@ Client side မှာတော့ အကြမ်းဖျဉ်းပဲ​တ�
 ထုံးစံအတိုင်း Local မှာ အရင်ပြပြီး
 နောက်ကွယ်က Ajax နဲ့ ခေါ်ထားမယ်။
 
+
+- [ ] Insert Comment
+
+Comment Text Input 
+Action
+API Integrated
+
 ### ပြဿနာ
 
 react-dom.development.js:86 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.

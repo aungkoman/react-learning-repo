@@ -29,6 +29,7 @@ const CommentListPage = ({user, comments, appendComments, addNewComment, deleteC
     const [queryParameters] = useSearchParams();
 
     let article_id   = queryParameters.get("article_id");
+    const [commentContent, setCommentContent] = useState('');
     
     // select comment for this article 
     useEffect(() => {
@@ -60,8 +61,8 @@ const CommentListPage = ({user, comments, appendComments, addNewComment, deleteC
     }, []);
 
     // api for upvote, downvote
-    const voteCreateApi = ({article_id, vote_type, access_token}) => {
-        console.log("article_list_page->voteCreateApi");
+    const commentCreateApi = ({article_id, content, access_token}) => {
+        console.log("CommentListPage->commentCreateApi");
         const axiosInstance = axios.create({
             baseURL: "http://localhost/pandora/public/api/v1",
             headers: {
@@ -69,17 +70,33 @@ const CommentListPage = ({user, comments, appendComments, addNewComment, deleteC
               'Content-Type': 'application/json', // You can set other headers as needed
             },
           });
-          let body  = {article_id, vote_type};
+          let body  = {article_id, content};
           console.log(body);
 
-          axiosInstance.post('/votes', body)
+          axiosInstance.post('/comments', body)
           .then((response) => {
-                console.log("article_list_page->article_list_page response");
+                console.log("CommentListPage->commentCreateApi response");
                 console.log(response.data);
+                addNewComment(response.data.data);
+                setCommentContent("");
            }).catch(function(err) {
-            console.log("article_list_page->article_list_page catch");
+            console.log("CommentListPage->commentCreateApi catch");
             console.log(err); // "oh, no!"
           });
+    }
+
+    const addCommentLocal = () => {
+        let new_comment = {
+            id : 0,
+            article_id : article_id,
+            user_id : user.id,
+            content : commentContent,
+            user: user,
+            created_at : new Date().toLocaleDateString(),
+            updated_at : new Date().toLocaleDateString()
+        };
+        
+        commentCreateApi({...new_comment, access_token : user.access_token});
     }
 
     // api for upvote, downvote
@@ -103,34 +120,15 @@ const CommentListPage = ({user, comments, appendComments, addNewComment, deleteC
             console.log(err); // "oh, no!"
           });
     }
-    const upVote = article_id => {
-        console.log("article_list_page->voteDeleteApi ${article_id}");
-        console.log(article_id);
-        console.log(user);
-        submitUpVote(article_id, user);
-        let vote_type = 1;
-        let access_token = user.access_token;
-        voteCreateApi({article_id, vote_type, access_token });
-    }
-    const unVote = article_id => {
-        console.log("ArticleListPage->unVote ", article_id);
-        submitUnVote(article_id, user);
-        console.log("unVote -> ", user.access_token);
-        let access_token = user.access_token;
-        voteDeleteApi({article_id, access_token});
-    }
-    const downVote = article_id => {
-        console.log("ArticleListPage->downVote ", article_id);
-        submitDownVote(article_id, user);
-        let vote_type = 0;
-        let access_token = user.access_token;
-        voteCreateApi({article_id, vote_type, access_token });
-    }
+    
 
 
     
     return <>
         <h1>Comment List Page</h1>
+
+        <input type="text" value={ commentContent } onChange={(e) => setCommentContent(e.target.value)} />
+        <button onClick={() => { addCommentLocal(); }}>Submit</button>
         <ul>
         {comments.map((comment, index) => {
             return (
