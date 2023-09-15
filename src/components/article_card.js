@@ -16,7 +16,7 @@ const ArticleCard = ({article, upVote, unVote, downVote}) => {
         }
         <span>({ article.up_vote}) Up Vote(s)</span>
         
-        <Link to={ "/comments?article_id="+ article.id } >( {article.comments.length} ) Comments</Link>
+        <Link to={ "/comments?article_id="+ article.id } >( {article.comment_count} ) Comments</Link>
         { article.user_vote == 0 
             ? <button onClick={ () => unVote(article.id) } > Un Vote </button>
             : <button onClick={ () => downVote(article.id) } > Down Vote </button>

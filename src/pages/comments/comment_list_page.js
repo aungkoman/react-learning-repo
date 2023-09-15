@@ -11,7 +11,8 @@ import {appendComments, addNewComment, deleteComment, clearComments} from "../..
 const mapStateToProps = state => {
     return ({
         user: state.user,
-        comments: state.comments
+        comments: state.comments,
+        articles: state.articles
     })
 }
 const mapDispatchToProps = dispatch => {
@@ -24,12 +25,22 @@ const mapDispatchToProps = dispatch => {
 }
 
 /* list of data */
-const CommentListPage = ({user, comments, appendComments, addNewComment, deleteComment, clearComments}) => {
+const CommentListPage = ({user, comments, articles, appendComments, addNewComment, deleteComment, clearComments}) => {
     /* Component တိုင်းမှာ State နဲ့ UI နှစ်ပိုင်းပါမယ်။ */
     const [queryParameters] = useSearchParams();
 
     let article_id   = queryParameters.get("article_id");
+
+    /*
+    console.log("articles is ");
+    console.log(articles);
+
+    let article_one = articles.find( (article_one) => article_one.id == article_id );
+    console.log(article);
+    */
+
     const [commentContent, setCommentContent] = useState('');
+    const [article, setArticle] = useState(articles.find( (article_one) => article_one.id == article_id ));
     
     // select comment for this article 
     useEffect(() => {
@@ -127,6 +138,8 @@ const CommentListPage = ({user, comments, appendComments, addNewComment, deleteC
     return <>
         <h1>Comment List Page</h1>
 
+        <h2>{ article != undefined ? article.title : "article.title" } </h2>
+        <p>{article != undefined ? article.content : "article.content" }</p>
         <input type="text" value={ commentContent } onChange={(e) => setCommentContent(e.target.value)} />
         <button onClick={() => { addCommentLocal(); }}>Submit</button>
         <ul>
