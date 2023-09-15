@@ -10,6 +10,29 @@ Feature တစ်ခု ထည့်မယ်ဆို ဘယ်က စလုပ
 - [ ] Routing မှာ သက်ဆိုင်ရာ Page တွေ ကြေညာမယ် ချိတ်မယ်။
 
 
+API ခေါ်ဖို့ပဲ​ကျန်တော့မယ်။
+တစ်ခုက UpVote ရော Downvote ရော လုပ်မယ့် သူတွေ။
+API ဘက်ကပဲ စစ်ပေးမလား
+Client ဘက်က ပေးရဉီးမလား
+ငါ အရင်ကတော့ ဘာလုပ်ခဲ့ပါတယ်ဆိုတာကို
+မပေးတော့ဘူး
+နောက်ဆုံး လုပ်ချင်တဲ့ Action ပဲ ပေးတော့မယ်။
+
+ဒီ​ Article ကို ငါကြိုက်တယ် ဒါပဲ။
+Client side မှာတော့ အကြမ်းဖျဉ်းပဲ​တွက်ပြထားပေးမယ်။
+ချက်ခြင်းတိုးတာမျိုး
+လျော့တာမျိုး
+သူလုပ်လိုက်တဲ့ action ကို
+ဒါပေမယ့် 
+
+သူ နဂိုက မကြိုက်ဘူး
+အခုမှ ကြိုက်တဲ့အခါ ဘယ
+
+### Comment CRUD API ထည့်မယ်။
+
+ထုံးစံအတိုင်း Local မှာ အရင်ပြပြီး
+နောက်ကွယ်က Ajax နဲ့ ခေါ်ထားမယ်။
+
 ### ပြဿနာ
 
 react-dom.development.js:86 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
