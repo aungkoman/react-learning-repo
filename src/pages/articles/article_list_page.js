@@ -87,8 +87,30 @@ const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote, submitU
             console.log(err); // "oh, no!"
           });
     }
+
+    // api for upvote, downvote
+    const voteDeleteApi = ({article_id, access_token}) => {
+        console.log("article_list_page->voteDeleteApi");
+        console.log(access_token);
+        const axiosInstance = axios.create({
+            baseURL: "http://localhost/pandora/public/api/v1",
+            headers: {
+              'Authorization': `Bearer ${access_token}`,
+              'Content-Type': 'application/json', // You can set other headers as needed
+            },
+          });
+
+          axiosInstance.delete('/votes?article_id='+article_id)
+          .then((response) => {
+                console.log("article_list_page->voteDeleteApi response");
+                console.log(response.data);
+           }).catch(function(err) {
+            console.log("article_list_page->voteDeleteApi catch");
+            console.log(err); // "oh, no!"
+          });
+    }
     const upVote = article_id => {
-        console.log("ArticleListPage->upVote ${article_id}");
+        console.log("article_list_page->voteDeleteApi ${article_id}");
         console.log(article_id);
         console.log(user);
         submitUpVote(article_id, user);
@@ -99,6 +121,9 @@ const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote, submitU
     const unVote = article_id => {
         console.log("ArticleListPage->unVote ", article_id);
         submitUnVote(article_id, user);
+        console.log("unVote -> ", user.access_token);
+        let access_token = user.access_token;
+        voteDeleteApi({article_id, access_token});
     }
     const downVote = article_id => {
         console.log("ArticleListPage->downVote ", article_id);
