@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 import { connect } from 'react-redux';
-import {clearAll, addAll, submitUpVote, submitUnVote} from "../../providers/actions/ArticleAction";
+import {clearAll, addAll, submitUpVote, submitUnVote, submitDownVote} from "../../providers/actions/ArticleAction";
 import ArticleCard from '../../components/article_card';
 
 const mapStateToProps = state => {
@@ -16,12 +16,13 @@ const mapDispatchToProps = dispatch => {
         clearAll: () => dispatch(clearAll()),
         addAll: articles => dispatch(addAll(articles)),
         submitUpVote: (article_id, user) => dispatch(submitUpVote(article_id, user)),
-        submitUnVote: (article_id, user) => dispatch(submitUnVote(article_id, user))
+        submitUnVote: (article_id, user) => dispatch(submitUnVote({article_id, user})),
+        submitDownVote: (article_id, user) => dispatch(submitDownVote(article_id, user))
     }
 }
 
 /* list of data */
-const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote, submitUnVote}) => {
+const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote, submitUnVote, submitDownVote}) => {
     /* Component တိုင်းမှာ State နဲ့ UI နှစ်ပိုင်းပါမယ်။ */
     
     useEffect(() => {
@@ -74,6 +75,11 @@ const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote, submitU
         console.log("ArticleListPage->unVote ", article_id);
         submitUnVote(article_id, user);
     }
+
+    const downVote = article_id => {
+        console.log("ArticleListPage->downVote ", article_id);
+        submitDownVote(article_id, user);
+    }
     
     return <>
         <h1>Article List Page</h1>
@@ -82,7 +88,7 @@ const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote, submitU
         {articles.map((article, index) => {
             // article card ဆိုပြီး component တစ်ခု ရှိသင့်တယ်။
             return (
-                ArticleCard({article, upVote, unVote})
+                ArticleCard({article, upVote, unVote, downVote})
                 // <li key={article.id}>{article.title}</li>
             )
         })}

@@ -34,7 +34,10 @@ const articleReducer = (state = [], action) => {
                 if (article.id === action.article_id) { // Example: Updating the object with id 2
                   return { 
                         ...article, 
+                        // update this fields 
+                        // decrease down_vote if user already down voted
                         down_vote :  article.user_vote == 0 ? article.down_vote - 1 : article.down_vote ,
+                        // decrease up_vote if user already up voted
                         up_vote :  article.user_vote == 1 ? article.up_vote - 1 : article.up_vote ,
                         user_vote: -1, 
                   }; // Create a new object with updated properties
