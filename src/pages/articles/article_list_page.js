@@ -65,21 +65,47 @@ const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote, submitU
             })
     }, []);
 
+    // api for upvote, downvote
+    const voteCreateApi = ({article_id, vote_type, access_token}) => {
+        console.log("article_list_page->voteCreateApi");
+        const axiosInstance = axios.create({
+            baseURL: "http://localhost/pandora/public/api/v1",
+            headers: {
+              'Authorization': `Bearer ${access_token}`,
+              'Content-Type': 'application/json', // You can set other headers as needed
+            },
+          });
+          let body  = {article_id, vote_type};
+          console.log(body);
+
+          axiosInstance.post('/votes', body)
+          .then((response) => {
+                console.log("article_list_page->article_list_page response");
+                console.log(response.data);
+           }).catch(function(err) {
+            console.log("article_list_page->article_list_page catch");
+            console.log(err); // "oh, no!"
+          });
+    }
     const upVote = article_id => {
         console.log("ArticleListPage->upVote ${article_id}");
         console.log(article_id);
         console.log(user);
         submitUpVote(article_id, user);
+        let vote_type = 1;
+        let access_token = user.access_token;
+        voteCreateApi({article_id, vote_type, access_token });
     }
     const unVote = article_id => {
         console.log("ArticleListPage->unVote ", article_id);
         submitUnVote(article_id, user);
     }
-
     const downVote = article_id => {
         console.log("ArticleListPage->downVote ", article_id);
         submitDownVote(article_id, user);
     }
+
+
     
     return <>
         <h1>Article List Page</h1>

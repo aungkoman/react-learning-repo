@@ -8,8 +8,8 @@ import { connect } from 'react-redux';
 const LoginPage = ({dispatch}) => {
     // State
     // let history = useHistory();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('admin@email.com');
+    const [password, setPassword] = useState('12345678');
 
     // core
     const navigate = useNavigate();
