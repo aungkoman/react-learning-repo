@@ -16,7 +16,6 @@ const articleReducer = (state = [], action) => {
                 return article; // Return the original object unchanged for other objects
             });
             return [...articles];
-        
         case 'DOWN_VOTE':
             // article_id, user
              const down_voted_articles = state.map((article) => {
@@ -26,8 +25,6 @@ const articleReducer = (state = [], action) => {
                 return article; // Return the original object unchanged for other objects
             });
             return [...down_voted_articles];
-        
-        
         case 'UN_VOTE':
             // article_id, user
              const un_voted_articles = state.map((article) => {
