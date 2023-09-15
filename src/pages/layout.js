@@ -32,6 +32,9 @@ const Layout = () => {
           <li>
             <Link to="/new-article">New Article Page</Link>
           </li>
+          <li>
+            <Link to="/comments">Comment Listing Page</Link>
+          </li>
         </ul>
       </nav>
       <Outlet />

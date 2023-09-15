@@ -1,4 +1,4 @@
-const articleReducer = (state = [], action) => {
+const commentReducer = (state = [], action) => {
     switch(action.type) {
         // ဒါက API ကနေ Select လုပ်လို့ရလာတဲ့ အခြေအနေ
         /* it's all about state and ui */
@@ -28,4 +28,4 @@ const articleReducer = (state = [], action) => {
         default : return state;
     }
 }
-export default articleReducer;
+export default commentReducer;

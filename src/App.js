@@ -16,6 +16,7 @@ import ShopsPage from "./pages/shops/shops_page";
 import ShopPage from "./pages/shops/shop_page";
 import ArticleListPage from "./pages/articles/article_list_page";
 import NewArticlePage from "./pages/articles/new_article_page";
+import CommentListPage from "./pages/comments/comment_list_page";
 
 
 import { Provider } from 'react-redux';
@@ -41,6 +42,7 @@ function App() {
             <Route path="/shops/:url" element={<ShopPage />} />
             <Route path="/articles" element={<ArticleListPage />} />
             <Route path="/new-article" element={<NewArticlePage />} />
+            <Route path="/comments" element={<CommentListPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

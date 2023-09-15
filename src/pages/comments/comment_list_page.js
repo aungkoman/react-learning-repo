@@ -4,41 +4,39 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import {clearAll, addAll, submitUpVote, submitUnVote, submitDownVote} from "../../providers/actions/ArticleAction";
 import ArticleCard from '../../components/article_card';
-
+import CommentCard from '../../components/comment_card';
+import { useSearchParams } from "react-router-dom";
+import {appendComments, addNewComment, deleteComment, clearComments} from "../../providers/actions/CommentAction";
 
 const mapStateToProps = state => {
     return ({
         user: state.user,
-        articles: state.articles
+        comments: state.comments
     })
 }
 const mapDispatchToProps = dispatch => {
     return {
-        clearAll: () => dispatch(clearAll()),
-        addAll: articles => dispatch(addAll(articles)),
-        submitUpVote: (article_id, user) => dispatch(submitUpVote(article_id, user)),
-        submitUnVote: (article_id, user) => dispatch(submitUnVote({article_id, user})),
-        submitDownVote: (article_id, user) => dispatch(submitDownVote(article_id, user))
+        appendComments: comments => dispatch(appendComments(comments)),
+        addNewComment: comment => dispatch(addNewComment(comment)),
+        deleteComment: comment_id => dispatch(deleteComment(comment_id)),
+        clearComments: () => dispatch(clearComments())
     }
 }
 
 /* list of data */
-const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote, submitUnVote, submitDownVote}) => {
+const CommentListPage = ({user, comments, appendComments, addNewComment, deleteComment, clearComments}) => {
     /* Component တိုင်းမှာ State နဲ့ UI နှစ်ပိုင်းပါမယ်။ */
-    
-    useEffect(() => {
-        console.log("home_page->useEffect");
+    const [queryParameters] = useSearchParams();
 
+    let article_id   = queryParameters.get("article_id");
+    
+    // select comment for this article 
+    useEffect(() => {
+        console.log("CommentListPage->useEffect");
+        clearComments();
+        console.log(`article id is ${article_id}`);
         const token =  user.access_token;
         console.log("token is ", token);
-
-        const config = {
-            headers: { Authorization: `Bearer ${token}` }
-        };
-
-        console.log(config);
-
-        
         const bodyParameters = {
            key: "value"
         };
@@ -50,20 +48,15 @@ const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote, submitU
               'Content-Type': 'application/json', // You can set other headers as needed
             },
           });
-
-
-          // axios.get("http://localhost/pandora/public/api/v1/articles", config)
-          // axios.get("http://localhost/pandora/public/api/v1/articles", config)
-          axiosInstance.get('/articles')
+          axiosInstance.get('/comments?article_id='+article_id)
           .then((response) => {
-                console.log("article_list_page->useEffect response");
+                console.log("CommentListPage->useEffect response");
                 console.log(response.data);
-                // need to dispatch as action
-                //dispatch(addAll(response.data.data));
-                // အခုထိ အဆင်ပြေတယ်။
-                // upVote ထည့်တဲ့အချိန် မအိုကေတာ။
-                addAll(response.data.data)
-            })
+                appendComments(response.data.data)
+          }).catch((err) => {
+                console.log("CommentListPage->useEffect catch");
+                console.error(err.message); // "oh, no!"
+          });
     }, []);
 
     // api for upvote, downvote
@@ -137,14 +130,11 @@ const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote, submitU
 
     
     return <>
-        <h1>Article List Page</h1>
-        <p>{user.access_token}</p>
+        <h1>Comment List Page</h1>
         <ul>
-        {articles.map((article, index) => {
-            // article card ဆိုပြီး component တစ်ခု ရှိသင့်တယ်။
+        {comments.map((comment, index) => {
             return (
-                ArticleCard({article, upVote, unVote, downVote})
-                // <li key={article.id}>{article.title}</li>
+                CommentCard({comment, deleteComment})
             )
         })}
         </ul>
@@ -155,4 +145,4 @@ const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote, submitU
 
 
 //export default ArticleListPage;
-export default connect(mapStateToProps,mapDispatchToProps)(ArticleListPage);
+export default connect(mapStateToProps,mapDispatchToProps)(CommentListPage);

@@ -1,4 +1,5 @@
 
+import { Outlet, Link } from "react-router-dom";
 const ArticleCard = ({article, upVote, unVote, downVote}) => {
     return <div key={article.id}>
         <h2 >{ article.title }</h2>
@@ -15,7 +16,7 @@ const ArticleCard = ({article, upVote, unVote, downVote}) => {
         }
         <span>({ article.up_vote}) Up Vote(s)</span>
         
-        <span>Comment</span>
+        <Link to={ "/comments?article_id="+ article.id } >( {article.comments.length} ) Comments</Link>
         { article.user_vote == 0 
             ? <button onClick={ () => unVote(article.id) } > Un Vote </button>
             : <button onClick={ () => downVote(article.id) } > Down Vote </button>
