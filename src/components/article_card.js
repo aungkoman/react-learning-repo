@@ -13,12 +13,14 @@ const ArticleCard = ({article, upVote, unVote, downVote}) => {
             ? <button onClick={ () => unVote(article.id) } > Un Vote </button>
             : <button onClick={ () => upVote(article.id) } > Up Vote </button>
         }
+        <span>({ article.up_vote}) Up Vote(s)</span>
         
         <span>Comment</span>
         { article.user_vote == 0 
             ? <button onClick={ () => unVote(article.id) } > Un Vote </button>
             : <button onClick={ () => downVote(article.id) } > Down Vote </button>
         }
+        <span>({ article.down_vote}) Down Vote(s)</span>
         
     </div>
 };
