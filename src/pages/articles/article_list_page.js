@@ -103,6 +103,9 @@ const ArticleListPage = ({articles,user, clearAll, addAll, submitUpVote, submitU
     const downVote = article_id => {
         console.log("ArticleListPage->downVote ", article_id);
         submitDownVote(article_id, user);
+        let vote_type = 0;
+        let access_token = user.access_token;
+        voteCreateApi({article_id, vote_type, access_token });
     }
 
 
