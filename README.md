@@ -2,6 +2,20 @@
 
 ## 2023-10-14 Up Vote, Down Vote နဲ့ Comment ထည့်မယ်။
 
+### Screen Flow အချော ရေးမယ်။
+
+- [ ] New Feed
+- [ ] Login
+- [ ] Register
+- [ ] Profile
+- [ ] New Article Form
+- [ ] Article Detail with Comments
+
+
+ဒီ Screen (၆) ခုကို အချောသတ် ရေးပြီး deploy လုပ်ထားရမယ်။
+
+
+
 Feature တစ်ခု ထည့်မယ်ဆို ဘယ်က စလုပ်ရမလဲ?
 
 - [ ] Reducer စရေးရမယ်။

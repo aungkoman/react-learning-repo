@@ -17,6 +17,7 @@ import ShopPage from "./pages/shops/shop_page";
 import ArticleListPage from "./pages/articles/article_list_page";
 import NewArticlePage from "./pages/articles/new_article_page";
 import CommentListPage from "./pages/comments/comment_list_page";
+import NewsFeedPage from "./pages/new_feed";
 
 
 import { Provider } from 'react-redux';
@@ -32,7 +33,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
+            <Route index element={<NewsFeedPage   />} />
+            <Route path="/home-page" element={<HomePage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="*" element={<NoPage />} />
             <Route path="/home" element={<HomePage />} />
