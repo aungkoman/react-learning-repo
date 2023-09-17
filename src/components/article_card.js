@@ -5,8 +5,12 @@ import '../styles/main.css';
 const ArticleCard = ({article, upVote, unVote, downVote}) => {
     return <div key={article.id} className="article-card">
         <div className="article-card-header">
-            this is header
             <img className="profile-image" src="https://i.ibb.co/KFdhLnP/Reactive-with-React.png" />
+            <div className="op-info-column">
+                <span className="op-name">{article.user.name}</span>
+                <div className="divider"></div>
+                <span className="op-name">{article.created_at}</span>
+            </div>
         </div>
         <div className="article-card-body">
             this is body

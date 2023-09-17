@@ -54,6 +54,8 @@ div.article-card{
 }
 div.article-card-header{
     background-color: red;
+    display: flex;
+    flex-direction: row;
 }
 div.article-card-body{
     background-color: green;
@@ -64,4 +66,16 @@ div.article-card-footer{
 
 img.profile-image{
     width: 100px;
+}
+div.op-info-column{
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+div.divider{
+    height: 8px;
+}
+span.op-name{
+    display: flex;
 }
