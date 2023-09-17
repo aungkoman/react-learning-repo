@@ -59,6 +59,9 @@ div.article-card-header{
 }
 div.article-card-body{
     background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 div.article-card-footer{
     background-color: blue;

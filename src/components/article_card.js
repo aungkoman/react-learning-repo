@@ -13,10 +13,11 @@ const ArticleCard = ({article, upVote, unVote, downVote}) => {
             </div>
         </div>
         <div className="article-card-body">
-            this is body
+            <h2 >{ article.title }</h2>
+            <p> { article.content } </p>
         </div>
         <div className="article-card-footer">
-            this is body
+            this is footer
         </div>
 
         <hr></hr>
