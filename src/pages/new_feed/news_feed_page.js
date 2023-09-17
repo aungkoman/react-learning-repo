@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { clearAll, addAll, submitUpVote, submitUnVote, submitDownVote } from "../../providers/actions/ArticleAction";
 import ArticleCard from '../../components/article_card';
-
+import '../../styles/main.css';
 
 const mapStateToProps = state => {
     return ({
@@ -114,13 +114,30 @@ const NewsFeedPage = ({ articles, user, clearAll, addAll, submitUpVote, submitUn
 
 
     return <>
+        <div className='body'>
+            <section className='nav-bar'>
+                <img className='nav-logo' src='https://media.istockphoto.com/id/1007460960/photo/pandoras-box-on-wooden-background.jpg?s=612x612&w=0&k=20&c=leTXPASAGOtP6-wzEsjwnbE3jd92DsdzLsVopnnJcTc=' />
+                <span className='nav-title'>Pandora</span>
+                <span className='space'></span>
+                <span className='user-name'>username</span>
+                <img className='nav-logo' src='https://media.istockphoto.com/id/172645436/photo/lightbox.jpg?s=1024x1024&w=is&k=20&c=MvfiFx1EYoVAYKS4PG80xeCRwuAPDbpZe89-6WSMfag=' />
+            </section>
+            <section className='body'>
+                {articles.map((article, index) => {
+                    // article card ဆိုပြီး component တစ်ခု ရှိသင့်တယ်။
+                    return (
+                        ArticleCard({ article, upVote, unVote, downVote })
+                    )
+                })}
+            </section>
+        </div>
         <h1>News Feed</h1>
         <ul>
             {articles.map((article, index) => {
-                // article card ဆိုပြီး component တစ်ခု ရှိသင့်တယ်။
-                return (
-                    ArticleCard({ article, upVote, unVote, downVote })
-                )
+                    // article card ဆိုပြီး component တစ်ခု ရှိသင့်တယ်။
+                    return (
+                        ArticleCard({ article, upVote, unVote, downVote })
+                    )
             })}
         </ul>
     </>;

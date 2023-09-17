@@ -1,7 +1,21 @@
 
 import { Outlet, Link } from "react-router-dom";
+import '../styles/main.css';
+
 const ArticleCard = ({article, upVote, unVote, downVote}) => {
-    return <div key={article.id}>
+    return <div key={article.id} className="article-card">
+        <div className="article-card-header">
+            this is header
+            <img className="profile-image" src="https://i.ibb.co/KFdhLnP/Reactive-with-React.png" />
+        </div>
+        <div className="article-card-body">
+            this is body
+        </div>
+        <div className="article-card-footer">
+            this is body
+        </div>
+
+        <hr></hr>
         <h2 >{ article.title }</h2>
         <p> { article.content } </p>
         <span>{article.user_vote}</span>
