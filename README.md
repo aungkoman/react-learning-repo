@@ -1,4 +1,20 @@
 # Chat with React
+## 2023-09-25 Basic API and UI Component 
+
+- [ ] အခြေခံ ကိစ္စတွေ အကုန်ပြီး
+- [ ] Pagination လိုမယ်။ Article & Comments
+
+## Project Info
+
+Backend API
+https://github.com/mmsoftware100/pandora-backend/
+
+Frontend
+https://github.com/aungkoman/react-learning-repo
+
+API Documentation
+https://documenter.getpostman.com/view/6000182/2s93Y2R22i
+
 
 ## 2023-10-17 HTML,CSS UI is not for me
 
