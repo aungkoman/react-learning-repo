@@ -81,6 +81,10 @@ react-dom.development.js:86 Warning: Maximum update depth exceeded. This can hap
 ဘယ်ဟာက unlimited 
 
 
+-- insert လုပ်တဲ့အချိန်မှာ User အချက် အလက်ပြန်ပါမလာတော့ဘူး။
+
+
+
 ## 2023-09-11 Article Management
 
 ပြဿနာက Request Header မှာ Bearer Token ထည့်မရတာပဲ။

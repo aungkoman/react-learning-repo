@@ -17,11 +17,17 @@ const ArticleCard = ({article, upVote, unVote, downVote}) => {
             <p> { article.content } </p>
         </div>
         <div className="article-card-footer">
-            <button>Up</button>
-            <span>45</span>
-            <button>Down</button>
-            {/* need to go to detail page */}
+            { article.user_vote == 1 
+                ? <button onClick={ () => unVote(article.id) } > Un Vote ({ article.up_vote})</button>
+                : <button onClick={ () => upVote(article.id) } > Up Vote  ({ article.up_vote}) </button>
+            }
             <Link to={ "/comments?article_id="+ article.id } >( {article.comment_count} ) Comments</Link>
+            { article.user_vote == 0 
+                    ? <button onClick={ () => unVote(article.id) } > Un Vote ({ article.down_vote})</button>
+                    : <button onClick={ () => downVote(article.id) } > Down Vote ({ article.down_vote}) </button>
+            }
+            {/* need to go to detail page */}
+            
         </div>
         
     </div>
