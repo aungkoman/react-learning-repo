@@ -15,6 +15,12 @@ https://github.com/aungkoman/react-learning-repo
 API Documentation
 https://documenter.getpostman.com/view/6000182/2s93Y2R22i
 
+## Reader List
+
+https://redux.js.org/tutorials/essentials/part-2-app-structure
+
+
+
 
 ## 2023-10-17 HTML,CSS UI is not for me
 
