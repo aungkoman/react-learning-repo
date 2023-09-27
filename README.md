@@ -1,4 +1,50 @@
 # Chat with React
+
+## 2023-09-27 Action, Reducer နဲ့ Functional Component တွေကို connect လုပ်တာက အတော် လက်ဝင်
+
+အခု Redux-Toolkit က ပြတဲ့နည်းကတော့ ပိုပြီး သန့်ရှင်းသပ်ရပ် ရှိတယ်။
+အဲ့အတိုင်း လိုက်ပြင်ကြည့်ရအောင်။
+
+လောလောဆယ် hello world အတွက် ဘယ် command line ကို run ရမယ်ဆိုတာ မသိဖြစ်နေတယ်။
+အစက ပြန်ဖတ်ကြည့်ရမယ်။
+
+
+ဒီကနေ စလို့ရမယ်။
+https://github.com/reduxjs/redux-templates
+https://www.npmjs.com/package/cra-template-redux
+
+```bash
+npx create-react-app my-app --template redux
+```
+
+
+```bash
+Compiled successfully!
+
+You can now view my-app in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.189.89:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+One of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it may break at any time.
+
+babel-preset-react-app is part of the create-react-app project, which
+is not maintianed anymore. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.
+  
+
+
+```
 ## 2023-09-25 Basic API and UI Component 
 
 - [ ] အခြေခံ ကိစ္စတွေ အကုန်ပြီး
